@@ -23,7 +23,7 @@ mounted as a volume at `/src`:
 
     docker run --rm \
         -v "${PWD}:/src" \
-        six8/pyinstaller-alpine \
+        inn0kenty/pyinstaller-alpine \
         --noconfirm \
         --onefile \
         --log-level DEBUG \
@@ -49,7 +49,7 @@ parameter. A non-standard feature of this Docker image is that you can use
 
     docker run --rm \
         -v "${PWD}:/src" \
-        six8/pyinstaller-alpine \
+        inn0kenty/pyinstaller-alpine \
         --onefile \
         --random-key \
         --clean \
@@ -65,7 +65,7 @@ for consistent randomization for internal data structures:
     docker run --rm \
         -v "${PWD}:/src" \
         -e PYTHONHASHSEED=42 \
-        six8/pyinstaller-alpine \
+        inn0kenty/pyinstaller-alpine \
         --onefile \
         --clean \
         example.py
