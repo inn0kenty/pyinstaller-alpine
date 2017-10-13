@@ -6,9 +6,12 @@ RUN apk --update --no-cache add \
     zlib-dev \
     musl-dev \
     libc-dev \
-    gcc \
+    linux-headers \
+    g++ \
     git \
     pwgen \
+    zeromq-dev \
+    libzmq \
     && pip install --upgrade pip
 
 # Install pycrypto so --key can be used with PyInstaller
