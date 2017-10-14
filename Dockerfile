@@ -2,16 +2,18 @@
 FROM python:3.5-alpine
 
 # PyInstaller needs zlib-dev, gcc, libc-dev, and musl-dev
-RUN apk --update --no-cache add \
-    zlib-dev \
-    musl-dev \
-    libc-dev \
-    linux-headers \
-    g++ \
-    git \
-    pwgen \
-    zeromq-dev \
-    libzmq \
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
+    && apk --update --no-cache add \
+        zlib-dev \
+        musl-dev \
+        libc-dev \
+        linux-headers \
+        g++ \
+        git \
+        pwgen \
+        zeromq-dev \
+        libzmq \
+        upx \
     && pip install --upgrade pip
 
 # Install pycrypto so --key can be used with PyInstaller
