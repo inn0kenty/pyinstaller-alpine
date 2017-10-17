@@ -12,6 +12,8 @@ RUN apk --update --no-cache add \
     pwgen \
     zeromq-dev \
     libzmq \
+    libxml2-dev \
+    libxslt-dev \
     && pip install --upgrade pip
 
 # Install pycrypto so --key can be used with PyInstaller
