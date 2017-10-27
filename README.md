@@ -1,4 +1,4 @@
-PyInstaller Alpine
+PyInstaller Alpine (Python 3.6)
 ==================
 
 Docker image that can build single file Python apps with
@@ -30,8 +30,8 @@ mounted as a volume at `/src`:
         --clean \
         example.py
 
-If a `requirements.txt` file is found in your source directory, the
-requirements will automatically be installed with `pip`.
+If either a `requirements.txt` or `setup.py` file is found in your source directory, the 
+requirements will automatically be installed with `pip`.        
 
 This will output a built app to the `dist` sub-directory in your source
 directory. The app can be ran on an Alpine OS:

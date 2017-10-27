@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export PYINSTALLER_TAG=${1:-v3.3}
-export ALPINE_VERSION=${2:-v3.4}
+export ALPINE_VERSION=${2:-v3.6}
 
 REPO="six8/pyinstaller-alpine:alpine-${ALPINE_VERSION}-pyinstaller-${PYINSTALLER_TAG}"
 
