@@ -1,5 +1,7 @@
 # Official Python base image is needed or some applications will segfault.
-FROM python:3.5-alpine
+ARG PYTHON_VERSION
+ARG ALPINE_VERSION
+FROM python:${PYTHON_VERSION}-alpine${ALPINE_VERSION}
 
 # PyInstaller needs zlib-dev, gcc, libc-dev, and musl-dev
 
@@ -24,10 +26,10 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repos
 RUN pip install \
     pycrypto
 
-ARG PYINSTALLER_TAG=v3.3
+ARG PYINSTALLER_TAG
 
 # Build bootloader for alpine
-RUN git clone --depth 1 --single-branch --branch $PYINSTALLER_TAG https://github.com/pyinstaller/pyinstaller.git /tmp/pyinstaller \
+RUN git clone --depth 1 --single-branch --branch ${PYINSTALLER_TAG} https://github.com/pyinstaller/pyinstaller.git /tmp/pyinstaller \
     && cd /tmp/pyinstaller/bootloader \
     && python ./waf configure --no-lsb all \
     && pip install .. \

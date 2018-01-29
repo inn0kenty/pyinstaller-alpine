@@ -1,5 +1,4 @@
 #!/bin/bash
 
-./build.sh 3.2
-./build.sh 3.2.1
-./build.sh develop
+./build.sh 3.5
+./build.sh 3.6
