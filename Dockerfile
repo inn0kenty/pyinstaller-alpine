@@ -29,7 +29,6 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repos
         pkgconfig \
         postgresql-dev \
         pwgen \
-        py2-pip \
         python-dev \
         sudo \
         tcl-dev \
