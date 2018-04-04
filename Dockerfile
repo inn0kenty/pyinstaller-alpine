@@ -7,19 +7,37 @@ FROM python:${PYTHON_VERSION}-alpine${ALPINE_VERSION}
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && apk --update --no-cache add \
-        zlib-dev \
-        musl-dev \
-        libc-dev \
-        linux-headers \
+        bash \
+        build-base \
+        freetype-dev \
+        fribidi-dev \
         g++ \
+        gfortran \
         git \
-        pwgen \
-        zeromq-dev \
-        libzmq \
+        harfbuzz-dev \
+        jpeg-dev \
+        lcms2-dev \
+        libc-dev \
         libxml2-dev \
         libxslt-dev \
-        upx \
+        libzmq \
+        linux-headers \
+        musl-dev \
+        openblas-dev \
+        openjpeg-dev \
+        openssl \
+        pkgconfig \
         postgresql-dev \
+        pwgen \
+        py2-pip \
+        python-dev \
+        sudo \
+        tcl-dev \
+        tiff-dev \
+        tk-dev \
+        upx \
+        zeromq-dev \
+        zlib-dev \
     && pip install --upgrade pip
 
 # Install pycrypto so --key can be used with PyInstaller
