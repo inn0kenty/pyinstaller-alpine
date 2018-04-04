@@ -20,6 +20,25 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repos
         libxslt-dev \
         upx \
         postgresql-dev \
+        bash \
+        build-base \
+        freetype-dev \
+        fribidi-dev \
+        gfortran \
+        harfbuzz-dev \
+        jpeg-dev \
+        lcms2-dev \
+        openblas-dev \
+        openjpeg-dev \
+        openssl \
+        pkgconfig \
+        py2-pip \
+        python-dev \
+        sudo \
+        tcl-dev \
+        tiff-dev \
+        tk-dev \
+        zlib-dev \
     && pip install --upgrade pip
 
 # Install pycrypto so --key can be used with PyInstaller
