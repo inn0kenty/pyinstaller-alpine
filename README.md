@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/inn0kenty/pyinstaller-alpine.svg?branch=master)](https://travis-ci.org/inn0kenty/pyinstaller-alpine)
+
 PyInstaller Alpine
 ==================
 
