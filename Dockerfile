@@ -38,7 +38,6 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repos
         upx \
         zeromq-dev \
         zlib-dev \
-        zlib-dev \
     && pip install --upgrade pip
 
 # Install pycrypto so --key can be used with PyInstaller
