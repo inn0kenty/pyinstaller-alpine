@@ -1,0 +1,21 @@
+language: generic
+
+sudo: required
+
+services:
+  - docker
+
+env:
+  - REPO=pyinstaller-alpine
+
+before_script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+script:
+  - bash build-all.sh
+  - docker push $DOCKER_USERNAME/$REPO:3.5
+  - docker push $DOCKER_USERNAME/$REPO:3.6
+
+branches:
+  only:
+    - master
