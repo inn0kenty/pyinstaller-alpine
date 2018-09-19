@@ -1,14 +1,10 @@
 #!/bin/bash
 
-export PYTHON_VERSION=${1:-3.6}
-export ALPINE_VERSION=${2:-3.6}
-export PYINSTALLER_TAG=${3:-v3.3}
+export PYTHON_VERSION=${1}
+export ALPINE_VERSION=${2:-3.8}
+export PYINSTALLER_TAG=${3:-v3.4}
 
 REPO="inn0kenty/pyinstaller-alpine:$PYTHON_VERSION"
-
-if [[ "$PYTHON_VERSION" == "3.5" ]]; then
-    ALPINE_VERSION=""
-fi
 
 echo "python: $PYTHON_VERSION"
 echo "alpine: $ALPINE_VERSION"

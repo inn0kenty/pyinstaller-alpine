@@ -13,8 +13,6 @@ before_script:
 
 script:
   - bash build-all.sh
-  - docker push $DOCKER_USERNAME/$REPO:3.5
-  - docker push $DOCKER_USERNAME/$REPO:3.6
 
 branches:
   only:
