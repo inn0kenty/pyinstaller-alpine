@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 export PYTHON_VERSION=${1}
-export ALPINE_VERSION=${2:-3.8}
-export PYINSTALLER_TAG=${3:-v3.4}
+export ALPINE_VERSION=${2:-3.11}
+export PYINSTALLER_TAG=${3:-v3.6}
 
 REPO="inn0kenty/pyinstaller-alpine:$PYTHON_VERSION"
 
@@ -14,5 +14,3 @@ docker build \
     --build-arg ALPINE_VERSION=$ALPINE_VERSION \
     --build-arg PYINSTALLER_TAG=$PYINSTALLER_TAG \
     -t $REPO .
-
-docker push $REPO

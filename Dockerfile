@@ -2,8 +2,7 @@ ARG PYTHON_VERSION
 ARG ALPINE_VERSION
 FROM python:${PYTHON_VERSION}-alpine${ALPINE_VERSION}
 
-RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
-    && apk --update --no-cache add \
+RUN apk --update --no-cache add \
     bash \
     build-base \
     freetype-dev \
@@ -41,18 +40,24 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
 RUN pip install pycrypto \
     && curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 
-ENV PATH $PATH:/root/.poetry/bin
+ENV PATH $PATH:/root/.poetry/bin \
+    PYTHONFAULTHANDLER=1 \
+    PYTHONUNBUFFERED=1 \
+    PYTHONHASHSEED=random \
+    PIP_NO_CACHE_DIR=on \
+    PIP_DISABLE_PIP_VERSION_CHECK=on \
+    PIP_DEFAULT_TIMEOUT=100
 
 ARG PYINSTALLER_TAG
 
 # Build bootloader for alpine
-RUN git clone --depth 1 --single-branch --branch ${PYINSTALLER_TAG} https://github.com/pyinstaller/pyinstaller.git /tmp/pyinstaller \
+RUN git clone --depth 1 --single-branch --branch ${PYINSTALLER_TAG} \
+    https://github.com/pyinstaller/pyinstaller.git /tmp/pyinstaller \
     && cd /tmp/pyinstaller/bootloader \
     && python ./waf configure --no-lsb all \
     && cd .. && python setup.py install \
     && rm -Rf /tmp/pyinstaller
 
-VOLUME /src
 WORKDIR /src
 
 ADD ./bin /pyinstaller

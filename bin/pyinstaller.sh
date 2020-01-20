@@ -28,4 +28,5 @@ fi
 exec pyinstaller \
     --exclude-module pycrypto \
     --exclude-module PyInstaller \
+    --exclude-module poetry \
     ${pyinstaller_args}
