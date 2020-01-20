@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REPO="inn0kenty/pyinstaller-alpine:"
+REPO="inn0kenty/pyinstaller-alpine"
 
 docker push $REPO:2.7
 docker push $REPO:3.5
