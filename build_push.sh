@@ -20,6 +20,7 @@ build() {
     echo "pyinstaller: $PYINSTALLER_TAG"
 
     docker build \
+        --pull \
         --build-arg PYTHON_VERSION=$PYTHON_VERSION \
         --build-arg ALPINE_VERSION=$ALPINE_VERSION \
         --build-arg PYINSTALLER_TAG=$PYINSTALLER_TAG \
