@@ -3,13 +3,13 @@ FROM inn0kenty/pyinstaller-alpine:3.7 as build
 WORKDIR /build
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir --disable-pip-version-check -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 ARG PYINSTALLER_ARG
 RUN /pyinstaller/pyinstaller.sh --skip-req-install --random-key $PYINSTALLER_ARG
 
-FROM alpine:3.8
+FROM alpine:3.11
 
 # TODO: change it!
 LABEL maintainer=""
