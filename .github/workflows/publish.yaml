@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: build images
-        run: ./build_and_push.sh build
+        run: ./build_push.sh build
       - name: login to github
         run:  echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_LOGIN }} --password-stdin
       - name: push images
-        run: ./build_and_push.sh push
+        run: ./build_push.sh push
