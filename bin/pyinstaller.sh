@@ -1,5 +1,4 @@
 #!/bin/sh
-# Simple wrapper around pyinstaller
 
 set -e
 
