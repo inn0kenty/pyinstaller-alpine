@@ -41,13 +41,7 @@ See docker [documentation](https://docs.docker.com/v17.09/engine/userguide/eng-i
 
 Latest [poetry](https://github.com/python-poetry/poetry) already installed in all images.
 
-### Non-standard PyInstaller options
-
-You can use PyInstaller to
-[obfuscate your source with encryption](https://pythonhosted.org/PyInstaller/usage.html#encrypting-python-bytecode).
-To use a specific key, pass a 16 character string with the `--key {key-string}`
-parameter. A non-standard feature of this Docker image is that you can use
-`--random-key` to use a random key (see example/Dockerfile).
+### Reproducible Build
 
 If you want a [Reproducible Build](https://pythonhosted.org/PyInstaller/advanced-topics.html#creating-a-reproducible-build)
 when your source has not changed, you can pass a `PYTHONHASHSEED` env variable

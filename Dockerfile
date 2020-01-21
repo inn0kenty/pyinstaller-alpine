@@ -36,10 +36,11 @@ RUN apk --update --no-cache add \
     curl \
     && pip install --no-cache-dir --upgrade pip
 
-# Install pycrypto so --key can be used with PyInstaller and install poetry
-RUN pip install pycrypto poetry
+# Install poetry
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 
-ENV PYTHONFAULTHANDLER=1 \
+ENV PATH=$PATH:/root/.poetry/bin \
+    PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONHASHSEED=random \
     PIP_NO_CACHE_DIR=on \
@@ -56,9 +57,4 @@ RUN git clone --depth 1 --single-branch --branch ${PYINSTALLER_TAG} \
     && cd .. && python setup.py install \
     && rm -Rf /tmp/pyinstaller
 
-WORKDIR /src
-
-ADD ./bin /pyinstaller
-RUN chmod a+x /pyinstaller/*
-
-ENTRYPOINT ["/pyinstaller/pyinstaller.sh"]
+ENTRYPOINT ["/bin/sh"]
