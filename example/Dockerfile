@@ -7,7 +7,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 ARG PYINSTALLER_ARG
-RUN /pyinstaller/pyinstaller.sh --skip-req-install --random-key $PYINSTALLER_ARG
+RUN /pyinstaller/pyinstaller.sh --random-key $PYINSTALLER_ARG
 
 FROM alpine:3.11
 
