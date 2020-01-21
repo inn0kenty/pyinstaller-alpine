@@ -6,13 +6,13 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
-ARG PYINSTALLER_ARG
-RUN /pyinstaller/pyinstaller.sh --random-key $PYINSTALLER_ARG
+
+# If you nedd add some PyInstaller hooks (https://pythonhosted.org/PyInstaller/hooks.html)
+# create hooks dir and add key --additional-hooks-dir=hooks
+
+RUN pyinstaller --noconfirm --clean --onefile --name app example.py
 
 FROM alpine:3.11
-
-# TODO: change it!
-LABEL maintainer=""
 
 WORKDIR /app
 
@@ -22,8 +22,6 @@ RUN addgroup -S app \
 
 USER app
 
-COPY entrypoint.sh .
-
 COPY --from=build /build/dist/app .
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["./app"]
