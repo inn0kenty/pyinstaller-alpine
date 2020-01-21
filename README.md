@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/inn0kenty/pyinstaller-alpine.svg?branch=master)](https://travis-ci.org/inn0kenty/pyinstaller-alpine)
+![Build Status](https://github.com/inn0kenty/pyinstaller-alpine/workflows/Build%20and%20publish/badge.svg)
 
 PyInstaller Alpine
 ==================
@@ -22,10 +22,13 @@ Usage
 
 You can use:
 
- - inn0kenty/pyinstaller-alpine:3.7 for Python 3.7.0
- - inn0kenty/pyinstaller-alpine:3.6 for Python 3.6.6
- - inn0kenty/pyinstaller-alpine:3.5 for Python 3.5.6
- - inn0kenty/pyinstaller-alpine:2.7 for Python 2.7.15
+ - inn0kenty/pyinstaller-alpine:3.8 for Python 3.8
+ - inn0kenty/pyinstaller-alpine:3.7 for Python 3.7
+ - inn0kenty/pyinstaller-alpine:3.6 for Python 3.6
+ - inn0kenty/pyinstaller-alpine:3.5 for Python 3.5
+ - inn0kenty/pyinstaller-alpine:2.7 for Python 2.7
+
+All images [except 2.7](https://pythonclock.org/) updates every sunday.
 
 
 ### Docker Multi-stage builds
@@ -50,6 +53,10 @@ This will output a built app to the `dist` sub-directory in your source
 directory. The app can be ran on an Alpine OS:
 
     ./dist/app
+
+### Poetry
+
+Latest [poetry](https://github.com/python-poetry/poetry) already installed in all images.
 
 ### Non-standard PyInstaller options
 
