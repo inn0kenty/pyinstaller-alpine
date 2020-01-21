@@ -32,7 +32,7 @@ push() {
     docker push $REPO:$PYTHON_VERSION
 }
 
-versions=(2.7)
+versions=(2.7 3.5 3.6 3.7 3.8)
 
 case $1 in
 build)
