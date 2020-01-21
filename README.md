@@ -31,28 +31,11 @@ You can use:
 All images [except 2.7](https://pythonclock.org/) updates every sunday.
 
 
-### Docker Multi-stage builds
+### Build
+
+This images should be used with docker multi-stage builds.
 
 See docker [documentation](https://docs.docker.com/v17.09/engine/userguide/eng-image/multistage-build/) and example folder.
-
-### Building A PyInstaller Package
-
-To build a Python package, create a Docker container with your source
-mounted as a volume at `/src`:
-
-    docker run --rm \
-        -v "${PWD}:/src" \
-        inn0kenty/pyinstaller-alpine:3.7 \
-        --noconfirm \
-        --onefile \
-        --clean \
-        --name app \
-        example/example.py
-
-This will output a built app to the `dist` sub-directory in your source
-directory. The app can be ran on an Alpine OS:
-
-    ./dist/app
 
 ### Poetry
 
@@ -65,11 +48,6 @@ You can use PyInstaller to
 To use a specific key, pass a 16 character string with the `--key {key-string}`
 parameter. A non-standard feature of this Docker image is that you can use
 `--random-key` to use a random key (see example/Dockerfile).
-
-If a `requirements.txt` file is found in your source directory, the
-requirements will automatically be installed with `pip`. But if you want cache
-requirements by docker you can skip installing in pyinstaller script by
-providing `--skip-req-install` option (see example/Dockerfile).
 
 If you want a [Reproducible Build](https://pythonhosted.org/PyInstaller/advanced-topics.html#creating-a-reproducible-build)
 when your source has not changed, you can pass a `PYTHONHASHSEED` env variable
