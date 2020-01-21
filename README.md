@@ -1,4 +1,4 @@
-![Build Status](https://github.com/inn0kenty/pyinstaller-alpine/workflows/Build%20and%20publish/badge.svg)
+[![Build Status](https://github.com/inn0kenty/pyinstaller-alpine/workflows/Build%20and%20publish/badge.svg)](https://github.com/inn0kenty/pyinstaller-alpine/actions)
 
 PyInstaller Alpine
 ==================
