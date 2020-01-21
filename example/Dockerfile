@@ -2,6 +2,8 @@ FROM inn0kenty/pyinstaller-alpine:3.7 as build
 
 WORKDIR /build
 
+# allso you can use poetry to install dependencies
+
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
