@@ -36,10 +36,6 @@ This images should be used with docker multi-stage builds.
 
 See docker [documentation](https://docs.docker.com/v17.09/engine/userguide/eng-image/multistage-build/) and example folder.
 
-### Poetry
-
-Latest [poetry](https://github.com/python-poetry/poetry) already installed in all images.
-
 ### Reproducible Build
 
 If you want a [Reproducible Build](https://pythonhosted.org/PyInstaller/advanced-topics.html#creating-a-reproducible-build)

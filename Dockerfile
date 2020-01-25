@@ -36,11 +36,7 @@ RUN apk --update --no-cache add \
     curl \
     && pip install --no-cache-dir --upgrade pip
 
-# Install poetry
-RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-
-ENV PATH=$PATH:/root/.poetry/bin \
-    PYTHONFAULTHANDLER=1 \
+ENV PYTHONFAULTHANDLER=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONHASHSEED=random \
     PIP_NO_CACHE_DIR=on \
@@ -49,7 +45,7 @@ ENV PATH=$PATH:/root/.poetry/bin \
 
 ARG PYINSTALLER_TAG
 
-# Build bootloader for alpine
+# Build pyinstaller
 RUN git clone --depth 1 --single-branch --branch ${PYINSTALLER_TAG} \
     https://github.com/pyinstaller/pyinstaller.git /tmp/pyinstaller \
     && cd /tmp/pyinstaller/bootloader \
