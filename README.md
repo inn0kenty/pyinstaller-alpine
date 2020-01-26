@@ -28,7 +28,7 @@ You can use:
  - inn0kenty/pyinstaller-alpine:3.5 for Python 3.5
  - inn0kenty/pyinstaller-alpine:2.7 for Python 2.7
 
-All images updates every sunday.
+All images except 2.7 updates every saturday.
 
 ### Build
 
