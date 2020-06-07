@@ -24,7 +24,7 @@ RUN apk --update --no-cache add \
     pkgconfig \
     postgresql-dev \
     pwgen \
-    python-dev \
+    python3-dev \
     sudo \
     tcl-dev \
     tiff-dev \
