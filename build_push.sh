@@ -42,6 +42,9 @@ push)
         push $v
     done
     ;;
+build_specific)
+    build $2
+    ;;
 *)
     echo "Define build or push command"
     exit 1
