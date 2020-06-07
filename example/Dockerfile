@@ -14,7 +14,7 @@ COPY . .
 
 RUN pyinstaller --noconfirm --clean --onefile --name app example.py
 
-FROM alpine:3.11
+FROM alpine
 
 WORKDIR /app
 
