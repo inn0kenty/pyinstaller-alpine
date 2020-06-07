@@ -5,10 +5,8 @@ LATEST_PYINSTALLER_TAG=$(curl --silent \
     grep '"tag_name":' |
     sed -E 's/.*"([^"]+)".*/\1/')
 
-ALPINE_VERSION=3.11
 REPO="inn0kenty/pyinstaller-alpine"
 
-echo "use alpine: $ALPINE_VERSION"
 echo "use repo: $REPO"
 echo
 
@@ -22,7 +20,6 @@ build() {
     docker build \
         --pull \
         --build-arg PYTHON_VERSION=$PYTHON_VERSION \
-        --build-arg ALPINE_VERSION=$ALPINE_VERSION \
         --build-arg PYINSTALLER_TAG=$PYINSTALLER_TAG \
         -t $REPO:$PYTHON_VERSION .
 }

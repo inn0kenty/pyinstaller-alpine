@@ -1,6 +1,5 @@
 ARG PYTHON_VERSION
-ARG ALPINE_VERSION
-FROM python:${PYTHON_VERSION}-alpine${ALPINE_VERSION}
+FROM python:${PYTHON_VERSION}-alpine
 
 RUN apk --update --no-cache add \
     bash \
